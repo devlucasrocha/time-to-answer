@@ -6,7 +6,7 @@
         other: Administradores
       user: 
         one: Usuário
-        other: Usuário
+        other: Usuários
     attributes:
       admin:
         id: Código
