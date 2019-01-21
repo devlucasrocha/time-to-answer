@@ -1,0 +1,42 @@
+<body onload="time()">
+    <div>
+        <h1>Horas:&nbsp;<h1 id="hora"></h1></h1>
+    </div>
+</body>
+
+<script>
+    function time() {
+        today = new Date();
+        h = today.getHours();
+        m = today.getMinutes();
+        s = today.getSeconds();
+        if (s < 10) {
+            s = s.toString()
+            tmp = "0" + s
+            s = tmp
+        }
+        document.getElementById('hora').innerHTML= `${h}:${m}:${s}`
+        setTimeout('time()',500);
+    }
+</script>
+
+<style>
+    h1 {
+        display: inline-block;
+        font-family: sans-serif;
+    }
+    
+    h1#hora {
+        color: red;
+    }
+
+    div {
+        margin-top: 15%;
+        text-align: center;
+        font-size: 150%;
+    }
+
+    body {
+        background-color: wheat;
+    }
+</style>
