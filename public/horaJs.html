@@ -6,17 +6,27 @@
 
 <script>
     function time() {
-        today = new Date();
-        h = today.getHours();
-        m = today.getMinutes();
-        s = today.getSeconds();
+        today = new Date()
+        h = today.getHours()
+        m = today.getMinutes()
+        s = today.getSeconds()
         if (s < 10) {
-            s = s.toString()
-            tmp = "0" + s
-            s = tmp
+            s = "0" + s.toString()
+            document.getElementById("hora").style.color = "purple"
+        } else {
+            document.getElementById("hora").style.color = "red"
         }
+
+        if (m < 10) {
+            m = "0" + m.toString()
+        }
+
+        if (h < 10) {
+            h = "0" + h.toString()
+        }
+        
         document.getElementById('hora').innerHTML= `${h}:${m}:${s}`
-        setTimeout('time()',500);
+        setTimeout('time()',500)
     }
 </script>
 
