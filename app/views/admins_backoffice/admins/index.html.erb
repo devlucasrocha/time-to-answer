@@ -21,12 +21,10 @@
                 <td><%= admin.id %></td>
                 <td><%= admin.email %></td>
                 <td style="width: 90px;text-align: center;">
+
                     <%= link_to edit_admins_backoffice_admin_path(admin), class:"btn btn-primary btn-circle" do %>
                         <i class="fa fa-edit"></i>
                     <% end %>
-                    <!--<button type="button" class="btn btn-danger btn-circle">
-                    <i class="fa fa-minus"></i>
-                    </button>-->
 
                     <%= link_to admins_backoffice_admin_path(admin), method: :delete, class:"btn btn-danger btn-circle", data: { confirm: "Deseja realmente exluir esse administrador?" } do %>
                         <i class="fa fa-minus"></i>
@@ -37,4 +35,8 @@
             <% end %>
         </tbody>
     </table>
+
+    <div class="text-center">
+        <%= paginate @admins %>
+    <div>
 </div>
